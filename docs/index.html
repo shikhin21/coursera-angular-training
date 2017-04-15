@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <script src="lib/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/appStyles.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body ng-app="lunchModule" ng-controller="lunchController">
+   <div class="container">
+     <h1>Lunch Checker</h1>
+         <div class="form-group">
+           Empty strings within commas are not counted as valid lunch items. <br>
+           e.g. , , or ,, are not counted.
+         </div>
+         <div class="form-group">
+             <input ng-class="{'border-success':messageType=='success', 'border-error':messageType=='error'}" ng-model="lunchItems" id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button ng-click="checkTooMuch()" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div ng-class="{'message-success':messageType=='success', 'message-error':messageType=='error'}" ng-bind="quantityMessage" class="form-group message">
+           <!-- Your message can go here. -->
+         </div>
+   </div>
+
+</body>
+</html>
