@@ -1,4 +1,4 @@
-<div ng-show="items.length == 0" class="left">No items found!</div>
+<div ng-if="items.length == 0" class="left">No items found!</div>
 <div class="left" ng-repeat="item in items" >
   {{item.name}}, {{item.short_name}}, {{item.description}}
   <button ng-click="remove({index:$index})"
