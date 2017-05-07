@@ -1,27 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Narrow Down Your Menu Choice</title>
+    <title>Menu App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="lib/angular.min.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="scripts/modules/menuapp.module.js"></script>
+    <script src="scripts/modules/data.module.js"></script>
+    <script src="scripts/services/menudata.service.js"></script>
+    <script src="scripts/routes/routes.js"></script>
+    <script src="scripts/components/menuapp.categories.component.js"></script>
+    <script src="scripts/controllers/menuapp.categories.controller.js"></script>
+    <script src="scripts/components/menuapp.items.component.js"></script>
+    <script src="scripts/controllers/menuapp.items.controller.js"></script>
   </head>
-<body ng-app="NarrowItDownApp">
-   <div ng-controller="NarrowDownController as ndc" class="container">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
+<body ng-app="MenuApp">
+<h1>Welcome to our Restaurant</h1>
 
-    <div class="form-group">
-      <input ng-model="ndc.searchTerm" type="text" placeholder="search term" class="form-control">
-    </div>
-    <div class="form-group narrow-button">
-      <button ng-click="ndc.narrowItDownForMe()" class="btn btn-primary">Narrow It Down For Me!</button>
-    </div>
-    
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items-arr="ndc.found" on-remove="ndc.remove(index)"></found-items>
-  </div>
-
+<ui-view></ui-view>
 </body>
 </html>
