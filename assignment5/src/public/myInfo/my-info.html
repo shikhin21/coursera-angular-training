@@ -1,0 +1,13 @@
+<div ng-if="myInfoCtrl.showSignUp">
+  Not Signed Up Yet. <a ui-sref="public.signup" href="#">Sign Up Now!</a>
+</div>
+<div ng-if="!myInfoCtrl.showSignUp">
+<div><strong>First Name:</strong>                {{myInfoCtrl.info.firstName}}</div>
+<div><strong>Last Name:</strong>                 {{myInfoCtrl.info.lastName}}</div>
+<div><strong>Email:</strong>                     {{myInfoCtrl.info.email}}</div>
+<div><strong>Phone:</strong>                     {{myInfoCtrl.info.phone}}</div>
+<div><strong>Favorite Item:</strong>             {{myInfoCtrl.info.favItem}}</div>
+<div><strong>Favorite Item Name:</strong>        {{myInfoCtrl.info.favItemName}}</div>
+<div><strong>Favorite Item Description:</strong> {{myInfoCtrl.info.favItemDesc}}</div>
+<img ng-src="{{myInfoCtrl.info.favItemImagUrl}}" alt="favorite Image">
+</div>
